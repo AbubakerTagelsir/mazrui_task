@@ -46,4 +46,11 @@ class PostsController extends Controller
 
         return $post;
     }
+
+    // delete post 
+    public function delete(Request $request, $id){
+        $post = Post::findOrFail($id);
+        $post->delete();
+        return True;
+    }
 }

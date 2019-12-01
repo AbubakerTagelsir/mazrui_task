@@ -30,3 +30,6 @@ Route::get('/posts/{id}', 'PostsController@show');
 Route::get('/posts/{id}/edit', 'PostsController@edit');
 
 Route::get('/posts/{id}/update', 'PostsController@update');
+
+Route::get('/posts/{id}/delete', 'PostsController@delete');
+
