@@ -17,17 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/test', function (){
-    return "Sample API";
-});
 
-Route::get('articles', function() {
-    // If the Content-Type and Accept headers are set to 'application/json', 
-    // this will return a JSON structure. This will be cleaned up later.
-    return "PPPPPPPPPPPPPPPPPP";
-});
+// POSTS APIS
 Route::get('/posts', 'PostsController@index');
 
 Route::get('/posts/new', 'PostsController@new');
 
 Route::post('/posts/create', 'PostsController@create');
+
+Route::get('/posts/{id}', 'PostsController@show');
+
+Route::get('/posts/{id}/edit', 'PostsController@edit');
+
+Route::get('/posts/{id}/update', 'PostsController@update');
