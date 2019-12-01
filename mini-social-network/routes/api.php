@@ -33,3 +33,18 @@ Route::get('/posts/{id}/update', 'PostsController@update');
 
 Route::get('/posts/{id}/delete', 'PostsController@delete');
 
+// comments APIS
+Route::get('/posts/{post_id}/comments', 'CommentsController@index');
+
+Route::get('/posts/{post_id}/comments/new', 'CommentsController@new');
+
+Route::post('/posts/{post_id}/comments/create', 'CommentsController@create');
+
+Route::get('/posts/{post_id}/comments/{id}', 'CommentsController@show');
+
+Route::get('/comments/{id}/edit', 'CommentsController@edit');
+
+Route::get('/comments/{id}/update', 'CommentsController@update');
+
+Route::get('/comments/{id}/delete', 'CommentsController@delete');
+
