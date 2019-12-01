@@ -1,0 +1,13 @@
+react-mini-social-network/node_modules
+mini-social-network/node_modules
+mini-social-network/public/hot
+mini-social-network/public/storage
+mini-social-network/storage/*.key
+mini-social-network/vendor
+mini-social-network/.env
+mini-social-network/.env.backup
+mini-social-network/.phpunit.result.cache
+mini-social-network/Homestead.json
+mini-social-network/Homestead.yaml
+mini-social-network/npm-debug.log
+mini-social-network/yarn-error.log
