@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Auth::routes();
+// Auth::routes();
 
 // POSTS APIS
 Route::get('/posts', 'PostsController@index');
@@ -55,7 +55,7 @@ Route::get('/comments/{id}/delete', 'CommentsController@delete');
 Route::prefix('v1')->group(function(){
     Route::post('login', 'Api\AuthController@login');
     Route::post('register', 'Api\AuthController@register');
-    Route::group(['middleware' => 'auth:api'], function(){
+    Route::group(['middleware' => 'auth:api','cors'], function(){
     Route::post('getUser', 'Api\AuthController@getUser');
     });
    });
