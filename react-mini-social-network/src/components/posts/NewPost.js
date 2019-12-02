@@ -5,7 +5,6 @@ class NewPost extends Component{
     render(){
         return (
             <div>
-                NewPost
                 <PostForm />
             </div>
         );
