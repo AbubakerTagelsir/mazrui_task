@@ -9,7 +9,7 @@ class Landing extends Component{
               <p className="flow-text">Welcome to</p>
               <h1 className="title grey-text text-lighten-3">Our Social Network</h1>
         
-              <blockquote className="flow-text">A place to study for your High School Equivalency Diploma</blockquote>
+              <blockquote className="flow-text">A place to share and discuss your thoughts</blockquote>
         
         
             </span>

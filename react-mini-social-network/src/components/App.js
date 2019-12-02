@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Header from './Header';
-import NewPost from './NewPost';
+import NewPost from './posts/NewPost';
+import Posts from './posts/Posts';
 import Landing from './Landing';
 import Footer from './Footer';
 import Login from './Login';
 import Register from './Register';
 import '../App.css';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 
 class App extends Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.fetchUser();
     }
     render() {
@@ -21,13 +22,14 @@ class App extends Component {
                 <BrowserRouter>
                     <div className="maindd">
                         {/* <body className="welcome"> */}
-                            <Header />
+                        <Header />
                             <Route exact path="/" component={Landing} className="container" />
-                            <Route exact path="/posts" component={NewPost} />
+                            <Route exact path="/posts" component={Posts} />
+                            <Route exact path="/posts/new" component={NewPost} />
                             <Route exact path="/login" component={Login} />
                             <Route exact path="/register" component={Register} />
                             {/* <Route exact path="/comments" component={Comments} /> */}
-                            <Footer />
+                        {/* <Footer /> */}
 
                         {/* </body> */}
                     </div>
@@ -38,4 +40,4 @@ class App extends Component {
 
 }
 
-export default connect(null,actions)(App);
+export default connect(null, actions)(App);
