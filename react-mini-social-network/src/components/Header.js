@@ -21,6 +21,7 @@ class Header extends Component {
                     <a href="/" className="brand-logo">Social Network</a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><a href="/posts">All Posts</a></li>
+                        <li><a href="/posts/new">New Post</a></li>
 
                         {this.renderContent()}
                     </ul>

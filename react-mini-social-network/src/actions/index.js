@@ -17,6 +17,7 @@ export const fetchUser = () => async dispatch => {
 
 
 export const fetchPosts = () => async dispatch => {
-    const res = await axios.get('/api/posts');
+    const res = await axios.get('http://localhost:8000/api/posts');
+    console.log(res)
     dispatch({type: FETCH_POSTS, payload: res.data});
 };
