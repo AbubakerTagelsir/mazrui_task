@@ -5,11 +5,11 @@ class Header extends Component {
         return (
             <nav>
                 <div className="nav-wrapper">
-                    <a href="#" className="brand-logo">Social Network</a>
+                    <a href="/" className="brand-logo">Social Network</a>
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li><a href="sass.html">All Posts</a></li>
-                        <li><a href="badges.html">Login</a></li>
-                        <li><a href="collapsible.html">Register</a></li>
+                        <li><a href="/posts">All Posts</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
                     </ul>
                 </div>
             </nav>

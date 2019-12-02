@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Auth::routes();
 
 // POSTS APIS
 Route::get('/posts', 'PostsController@index');
@@ -48,3 +50,12 @@ Route::get('/comments/{id}/update', 'CommentsController@update');
 
 Route::get('/comments/{id}/delete', 'CommentsController@delete');
 
+// users
+
+Route::prefix('v1')->group(function(){
+    Route::post('login', 'Api\AuthController@login');
+    Route::post('register', 'Api\AuthController@register');
+    Route::group(['middleware' => 'auth:api'], function(){
+    Route::post('getUser', 'Api\AuthController@getUser');
+    });
+   });
