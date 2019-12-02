@@ -7,7 +7,7 @@ class Footer extends Component {
             <footer className="page-footer darken-3">
             <div className="footer-copyright darken-4">
               <div className="container">
-                <time datetime="{{ site.time | date: '%Y' }}">&copy; 2019 copyright</time>
+                <time dateTime="{{ site.time | date: '%Y' }}">&copy; 2019 copyright</time>
               </div>
             </div>
           </footer>
