@@ -60,7 +60,7 @@ class Login extends Component {
     const {errors} = this.state;
     return (
       <div className="Login container">
-        <form onSubmit={this.onSubmit()}>
+        <form onSubmit={this.onSubmit}>
           <FormGroup controlId="email">
             <label>Email</label>
             <FormControl

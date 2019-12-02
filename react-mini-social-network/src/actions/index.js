@@ -60,3 +60,11 @@ export const logoutUser = () => dispatch => {
     setAuthToken(false);
     dispatch(setCurrentUser({}));
 }
+
+
+// create new post
+export const createNewPost = postData => async dispatch => {
+    const res = await axios.post('/api/posts/new', postData);
+    console.log(res);
+
+};

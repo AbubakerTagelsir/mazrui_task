@@ -2,19 +2,45 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { Link } from 'react-router-dom';
+import { createNewPost } from '../../actions';
+import { connect } from 'react-redux';
 
 
 class PostForm extends Component {
+    constructor(){
+        super();
+        this.state = {
+            title: '',
+            body: '',
+            errors: {}
+        };
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+    onSubmit(e) {
+        e.preventDefault();
+        const postData = {
+            title: this.state.title,
+            body: this.state.body
+        };
+        this.props.createNewPost(postData);
+    }
+    onChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
     render() {
         return (
             <div className="container">
                 <h2 className="center bold">Create New Post</h2>
-                <form onSubmit={this.props.handleSubmit(values => console.log(values))} className="post-form">
+                <form onSubmit={this.onSubmit} className="post-form">
                     <FormGroup controlId="postTitle">
                         <label>Title</label>
                         <FormControl
                             autoFocus
                             type="text"
+                            name="title"
+                            onChange={this.onChange}
                         />
                     </FormGroup>
 
@@ -23,6 +49,8 @@ class PostForm extends Component {
                         <FormControl
                             autoFocus
                             type="text"
+                            name="body"
+                            onChange={this.onChange}
                         />
                     </FormGroup>
                     <Link to="/posts" className="red btn-flat white-text">cancel</Link>
@@ -38,6 +66,9 @@ class PostForm extends Component {
 }
 
 
-export default reduxForm({
-    form: 'postForm'
-})(PostForm);
+const mapStateToProps = state => ({
+    posts: state.posts,
+    errors: state.errors
+});
+
+export default connect(mapStateToProps, { createNewPost })(PostForm);
